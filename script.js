@@ -1,15 +1,7 @@
 var PresentDate = moment().format("dddd, MMM Do YYYY");
-var saveBtn = document.querySelector('saveBtn');
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+$("#currentDay").html(PresentDate);
+
 $(document).ready(function () {
-
-$('.saveBtn').on("click", function () {
-  var text = $(this).siblings('.description').val();
-  var time = $(this).parent().attr("id");
-
-  localStorage.setItem("time, text");
-});
 
   $("time08 .description").val(localStorage.getItem("time08"));
   $("time09 .description").val(localStorage.getItem("time09"));
@@ -21,4 +13,32 @@ $('.saveBtn').on("click", function () {
   $("time15 .description").val(localStorage.getItem("time15"));
   $("time16 .description").val(localStorage.getItem("time16"));
   $("time17 .description").val(localStorage.getItem("time17"));
-});
+
+  $('.saveBtn').on("click", function () {
+  var workInfo = $(this).siblings('.description').val();
+  var time = $(this).parent().attr("id");
+
+  localStorage.setItem(workInfo, time);
+  })
+
+  function blockStatus () {
+
+    var currentTime = moment().hour();
+
+    $(".time-block").each(function () {
+      var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+
+      if (timeBlock < currentTime) {
+        $(this).addClass("past");
+      }
+      else if (timeBlock == currentTime) {
+        $(this).addClass("present");
+      }
+      else if (timeBlock > currentTime) {
+        $(this).addClass("future");
+      }
+    })
+  }
+
+blockStatus();
+})
