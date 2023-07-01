@@ -2,12 +2,7 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+For this project, the task was to properly format the site with javascript and jquery so that it would reflect the current user's time so that the work scheduler was fully functional. This project helped change a placeholder code to be fully operational will real-time services. 
 
 ## Usage
 
@@ -15,3 +10,4 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Features
 
+    https://mr-jadendjordans52.github.io/Workday-Scheduler/
